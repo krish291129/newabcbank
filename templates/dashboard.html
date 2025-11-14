@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard | Banking System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='dash.css') }}">
+</head>
+<body>
+  <header>
+    <h2>Welcome, {{ username }} 👋</h2>
+  </header>
+
+  {% if account %}
+  <div class="account-info">
+    <h3>Account No: {{ account.account_no }}</h3>
+    <p>Current Balance: ₹{{ "%.2f"|format(account.balance) }}</p>
+  </div>
+  {% else %}
+  <div class="account-info">
+    <h3>No account yet!</h3>
+  </div>
+  {% endif %}
+
+  <div class="dashboard-cards">
+    <a href="{{ url_for('add') }}">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3597/3597088.png" alt="Add Account">
+        <h3>Add Account</h3>
+      </div>
+    </a>
+
+    <a href="{{ url_for('depo') }}">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920244.png" alt="Deposit">
+        <h3>Deposit</h3>
+      </div>
+    </a>
+
+    <a href="{{ url_for('withd') }}">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Withdraw">
+        <h3>Withdraw</h3>
+      </div>
+    </a>
+
+    <a href="{{ url_for('check') }}">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135706.png" alt="Check Balance">
+        <h3>Check Balance</h3>
+      </div>
+    </a>
+  </div>
+
+  <form action="{{ url_for('logout') }}" method="get">
+    <button class="logout-btn">Logout</button>
+  </form>
+</body>
+</html>
