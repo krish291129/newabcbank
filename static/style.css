@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  padding: 20px; /* Prevent content from touching edges on small screens */
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  padding: 40px 35px;
+  width: 100%;
+  max-width: 370px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+h2 {
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 12px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+input::placeholder {
+  color: #f1f1f1;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #4e54c8;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #6c72ff;
+  transform: translateY(-2px);
+}
+
+p {
+  color: #fff;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.flash {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.flash-success {
+  background: rgba(76, 175, 80, 0.3);
+  color: #b3ffb3;
+}
+
+.flash-warning {
+  background: rgba(255, 193, 7, 0.3);
+  color: #fff3cd;
+}
+
+.flash-danger {
+  background: rgba(244, 67, 54, 0.3);
+  color: #ffcdd2;
+}
+
+.flash-info {
+  background: rgba(33, 150, 243, 0.3);
+  color: #bbdefb;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  input {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .container {
+    padding: 25px 20px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}
